@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +18,7 @@ namespace Exercicios
         private double num3;
         private double num4;
         private int resultado;
+
 
         //Método Construtor: Instância as variáveis na memória
 
@@ -158,6 +161,58 @@ namespace Exercicios
             return Math.Sqrt(GetNum4());
         }//fim do raiz num4 
 
-    }
-}//fim da classe
-//fim do projeto
+        public string Exercicio01(int ano)
+        {
+            if (ano % 4 == 0)
+            {
+                return ano + " é bissexto";
+            }
+            else
+            {
+                return ano + " não é bissexto!";
+            }
+        }//fim do ano Bissexto
+
+        public string Exercicio02(int num)
+        {
+            if (num > 100 && num < 200)
+            {
+                return num + " está entre 100 e 200!";
+            }
+            else
+            {
+                return num + " não está entre 100 e 200";
+            }
+        }//fim do Exercicio02
+
+        public string Exercicio03(int idade)
+        {
+            if (idade >= 18)
+            {
+                return idade + " Pode votar";
+            }
+            else
+            {
+                return idade + " Não pode votar";
+            }
+        }//fim do Exercicio 03
+
+        public string Exercicio04(int ini, int fim, int numero)
+        {
+            Console.WriteLine("Informe o primeiro número: ");
+            ini = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Informe o segundo número: ");
+            fim = Convert.ToInt32(Console.ReadLine());
+
+            if (numero > ini && numero < fim) 
+            {
+                return numero + " está no intervalo";
+            }
+            else
+            {
+                return numero + " não está no intervalo";
+            }
+        }//fim do Exercício 04
+    }//fim da classe
+}//fim do projeto

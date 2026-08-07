@@ -36,11 +36,15 @@ namespace Exercicio
                 "1.Soma\n" +
                 "2.Subtração\n" +
                 "3.Divisão\n" +
-                "4.Multiplicação\n"+
+                "4.Multiplicação\n" +
                 "5.Potência\n" +
                 "6.Potênia com Parâmetros\n" +
                 "7.Raiz\n" +
-                "8.Raiz com Parâmetros\n");
+                "8.Raiz com Parâmetros\n" +
+                "9.Ano Bissexto\n" +
+                "10.Número entre 100 e 200\n" +
+                "11.Verifique se a pessoa pode votar\n" +
+                "12.Verifique se o número está no intervalo");
             SetOpcao(Convert.ToInt32(Console.ReadLine()));
             Console.Clear();//Limpa o console
         }
@@ -137,6 +141,30 @@ namespace Exercicio
                         //chamar o método que calcula a raiz
                         Console.WriteLine("A raiz do primeiro número é: " + this.modelo.Raiz(num1));
                         Console.WriteLine("A raiz do segundo número é: " + this.modelo.Raiz(num2));
+                        break;
+                    case 9:
+                        Console.WriteLine("Informe o ano: ");
+                        int ano = Convert.ToInt32(Console.ReadLine());
+                        //Mostrar o Resultado
+                        Console.WriteLine(this.modelo.Exercicio01(ano));
+                        break;
+                    case 10:
+                        Console.WriteLine("Informe se o número está entre 100 e 200: ");
+                        int num = Convert.ToInt32(Console.ReadLine());
+                        //Mostrar o Resultado
+                        Console.WriteLine(this.modelo.Exercicio02(num));
+                        break;
+                    case 11:
+                        Console.WriteLine("Verifique se a idade pode votar: ");
+                        int idade = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.modelo.Exercicio03(idade));
+                        break;
+                    case 12:
+                        Console.WriteLine("Verifique se o número está no intervalo: ");
+                        int ini = Convert.ToInt32(Console.ReadLine());
+                        int fim = Convert.ToInt32(Console.ReadLine());
+                        int numero = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.modelo.Exercicio04(ini, fim, numero));
                         break;
                     default:
                         Console.WriteLine("Opção escolhida não é válida!");
