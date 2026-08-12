@@ -213,6 +213,5 @@ namespace Exercicios
             {
                 return numero + " não está no intervalo";
             }
-        }//fim do Exercício 04
     }//fim da classe
 }//fim do projeto
