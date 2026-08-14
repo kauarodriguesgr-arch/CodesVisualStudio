@@ -19,7 +19,6 @@ namespace Exercicios
         private double num4;
         private int resultado;
 
-
         //Método Construtor: Instância as variáveis na memória
 
         public ExercicioModel()
@@ -175,7 +174,7 @@ namespace Exercicios
 
         public string Exercicio02(int num)
         {
-            if (num > 100 && num < 200)
+            if (num >= 100 && num <= 200)
             {
                 return num + " está entre 100 e 200!";
             }
@@ -187,7 +186,7 @@ namespace Exercicios
 
         public string Exercicio03(int idade)
         {
-            if (idade >= 18)
+            if (idade >= 16)
             {
                 return idade + " Pode votar";
             }
@@ -197,21 +196,195 @@ namespace Exercicios
             }
         }//fim do Exercicio 03
 
-        public string Exercicio04(int ini, int fim, int numero)
+        public string Exercicio04(int intervalo01, int intervalo02, int numComp)
         {
-            Console.WriteLine("Informe o primeiro número: ");
-            ini = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Informe o segundo número: ");
-            fim = Convert.ToInt32(Console.ReadLine());
-
-            if (numero > ini && numero < fim) 
+            if (numComp >= intervalo01 && numComp <= intervalo02)
             {
-                return numero + " está no intervalo";
+                return numComp + " está no intervalo";
+            }
+            else
+
+            {
+                return numComp + " não está no intervalo";
+            }
+        }//fim do Exercício04
+
+        public string Exercicio05()
+        {
+            int[] numeros = new int[10];//10 é o tamanho
+            bool flagNumeros = false;
+
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                Console.WriteLine("Informe o " + (i + 1) + " número: ");
+                numeros[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            //Pegar e buscar o número
+            Console.WriteLine("Digite o número a ser buscado: ");
+            SetNum1(Convert.ToInt32(Console.ReadLine()));
+
+            //Achar o número
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                if (GetNum1() == numeros[i])
+                {
+                    flagNumeros = true;
+                    break;
+                }
+                else
+                {
+                    flagNumeros = false;
+                }
+            }
+            if (flagNumeros == true)
+            {
+                return "\nO número " + GetNum1() + " está entre os números digitados.";
             }
             else
             {
-                return numero + " não está no intervalo";
+                return "\nO número " + GetNum1() + " não está entre os números digitados";
             }
+        }//fim do Exercicio05
+
+        public string Exercicio06(int medida1, int medida2, int medida3)
+        {
+            if (medida1 == medida2 && medida2 == medida3)
+            {
+                return " É Equilátero";
+            }
+            else if (medida1 == medida2 || medida2 == medida3 || medida1 == medida3)
+            {
+                return "É Isósceles";
+            }
+            else
+            {
+                return "É Escaleno";
+            }
+        }//fim do Exercicio06
+
+        public string Exercicio07(int dia)
+        {
+            switch (dia)
+            {
+                case 1:
+                    return "Domingo";
+                case 2:
+                    return "Segunda";
+                case 3:
+                    return "Terça";
+                case 4:
+                    return "Quarta";
+                case 5:
+                    return "Quinta";
+                case 6:
+                    return "Sexta";
+                case 7:
+                    return "Sábado";
+                default:
+                    return "Digite um número de 1 a 7";
+            }
+        }//Fim do Exercicio07
+
+        public string Exercicio08(int SenhaDigitada)
+        {
+            int SenhaBD = 1234;
+            int tentativa = 1;
+
+            while (tentativa < 3)
+            {
+
+                if (SenhaDigitada == SenhaBD)
+                {
+                    return "Bem-vindo!";
+                }
+                Console.WriteLine("\nSenha Incorreta!Tente Novamente: ");
+                string senha = Console.ReadLine();
+                tentativa++;
+            }
+            return "\nSenha Bloqueada";
+        }
+
+        //ler um número inteiro e retornar todos os múltiplos menores que 100
+        public string multiplo(int numero)
+        {
+            //contador
+            int i = 1;//criando contador e definir o ponto de partida
+            string resultado = null;
+            while (i < 100)
+            {
+                if (numero % i == 0)
+                {
+                    resultado += i + "\n";
+                }
+                //rodar meu contador
+                i++;
+            }//fim do WHILE
+            return resultado;
+        }//fim do método
+
+        public string multiploFor(int numeroMult)
+        {
+            string resultado = "";
+            for (int i = 1; i < 100; i++)
+            {
+                if (numeroMult % i == 0)
+                {
+                    resultado = i + "\n";
+                }//fim do if
+            }//fim do for
+            return resultado;
+        }//fim do método
+
+        public bool EhPalindromo(string palin)
+        {
+            int fim = palin.Length - 1;//meço o tamanho de caracteres
+            int inicio = 0;
+
+            while (inicio < fim)
+            {
+                if (palin.Substring(inicio, 1) != palin.Substring(fim, 1))
+                {
+                    return false;
+                }
+                inicio++;
+                fim--;
+            }//fim do while
+            return true;
+        }//fim do método 
+
+        public void ContarParImpar()
+        {
+            int contarPar = 0;
+            int contarImpar = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(i + 1 + "º número: ");
+                int num = Convert.ToInt32(Console.ReadLine());
+                //Comparações
+                if (num % 2 == 0)
+                {
+                    contarPar++;
+                }
+                else
+                {
+                    contarImpar++;
+                }
+            }//fim do for 
+            Console.WriteLine("A quantidade de pares é: " + contarPar + "\nA quantidade de ímpares é: " + contarImpar);
+        }//fim do parImpar
+
+        public string Exercicio09(int hora1, int hora2)
+        {
+            if (hora1 > hora2)
+            {
+                return hora1 + " é mais tarde que " + hora2;
+            }
+            else
+            {
+                return hora2 + " é mais tarde";
+            }
+        }
     }//fim da classe
 }//fim do projeto

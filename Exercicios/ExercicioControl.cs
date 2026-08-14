@@ -44,7 +44,16 @@ namespace Exercicio
                 "9.Ano Bissexto\n" +
                 "10.Número entre 100 e 200\n" +
                 "11.Verifique se a pessoa pode votar\n" +
-                "12.Verifique se o número está no intervalo");
+                "12.Verifique se o número está no intervalo\n" +
+                "13.Verifique se o número está entre os 10 valores\n" +
+                "14.Verifique o triângulo\n" +
+                "15.Verifique o dia da semana\n" +
+                "16.Veja se a senha está correta\n" +
+                "17.Múltiplo\n" +
+                "18.MúltiploFor\n" +
+                "19.Palindromo\n" +
+                "20.Contar Pares e Ímpares\n" +
+                "21.Horários\n");
             SetOpcao(Convert.ToInt32(Console.ReadLine()));
             Console.Clear();//Limpa o console
         }
@@ -160,14 +169,73 @@ namespace Exercicio
                         Console.WriteLine(this.modelo.Exercicio03(idade));
                         break;
                     case 12:
+                        Console.WriteLine("Digite o primeiro número: ");
+                        int intervalo01 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Digite o segundo número: ");
+                        int intervalo02 = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Verifique se o número está no intervalo: ");
-                        int ini = Convert.ToInt32(Console.ReadLine());
-                        int fim = Convert.ToInt32(Console.ReadLine());
+                        int numComp = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.modelo.Exercicio04(intervalo01, intervalo02, numComp));
+                        break;
+                    case 13:
+                        Console.WriteLine(this.modelo.Exercicio05());
+                        break;
+                    case 14:
+                        Console.WriteLine("Digite a medida do primeiro lado: ");
+                        int medida1 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Digite a medida do segundo lado: ");
+                        int medida2 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Digite a medida do terceiro lado: ");
+                        int medida3 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.modelo.Exercicio06(medida1, medida2, medida3));
+                        break;
+                    case 15:
+                        Console.WriteLine("Digite um dia da semana");
+                        int dia = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.modelo.Exercicio07(dia));
+                        break;
+                    case 16:
+                        Console.WriteLine("Digite sua senha: ");
+                        int SenhaDigitada = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.modelo.Exercicio08(SenhaDigitada));
+                        break;
+                    case 17:
+                        Console.WriteLine("Informe um número: ");
                         int numero = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine(this.modelo.Exercicio04(ini, fim, numero));
+                        //Mostrar o resultado da operação
+                        Console.WriteLine(this.modelo.multiplo(numero));
+                        break;
+                    case 18:
+                        Console.WriteLine("Informe um número");
+                        int numeroMult = opcao = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.modelo.multiploFor(numeroMult));
+                        break;
+                    case 19:
+                        Console.WriteLine("Informe um número: ");
+                        string palin = Console.ReadLine();
+                        if (this.modelo.EhPalindromo(palin) == false)
+                        {
+                            Console.WriteLine("Não é Palíndromo");
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("É Palíndromo");
+
+                        }
+                        break;
+                    case 20:
+                        this.modelo.ContarParImpar();
                         break;
                     default:
                         Console.WriteLine("Opção escolhida não é válida!");
+                        break;
+                    case 21:
+                        Console.WriteLine("Digite o primeiro horário: ");
+                        int hora1 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Digite o segundo horário: ");
+                        int hora2 = Convert.ToInt32(Console.ReadLine());
+                        this.modelo.Exercicio09(hora1, hora2);
                         break;
                 }//fim do Escolha
             } while (GetOpcao() != 0);//fim do do..while
