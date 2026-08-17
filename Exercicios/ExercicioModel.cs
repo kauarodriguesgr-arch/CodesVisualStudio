@@ -375,7 +375,7 @@ namespace Exercicios
             Console.WriteLine("A quantidade de pares é: " + contarPar + "\nA quantidade de ímpares é: " + contarImpar);
         }//fim do parImpar
 
-        public string Exercicio09(int hora1, int hora2)
+        public string Exercicio09(double hora1, double hora2)
         {
             if (hora1 > hora2)
             {
@@ -385,6 +385,32 @@ namespace Exercicios
             {
                 return hora2 + " é mais tarde";
             }
-        }
+        }//fim do Exercício 09
+
+        public string Exercicio10(int numero1, int numero2)
+        {
+            if (numero1 > numero2 && numero2 < numero1)
+            {
+                return (numero1 + " é maior que " + numero2);
+            }
+            else if (numero1 == numero2)
+            {
+                return " os dois números são iguais";
+            }
+            else
+            {
+                return (numero2 + " é maior que " + numero1);
+            }
+        }//fim do Exercicio 10
+
+        public string Exercicio11(int conta1, int conta2, int conta3, int conta4)
+        {
+            double media = conta1 + conta2 + conta3 + conta4 / 5;
+
+            return "A média é: " + media;
+        }//fim do Exercicio 11
+
+        public string Exercicio12;
     }//fim da classe
 }//fim do projeto
+ 

@@ -53,7 +53,9 @@ namespace Exercicio
                 "18.MúltiploFor\n" +
                 "19.Palindromo\n" +
                 "20.Contar Pares e Ímpares\n" +
-                "21.Horários\n");
+                "21.Horários\n" +
+                "22.Comparar os números\n" +
+                "23.Calcule a média");
             SetOpcao(Convert.ToInt32(Console.ReadLine()));
             Console.Clear();//Limpa o console
         }
@@ -227,15 +229,33 @@ namespace Exercicio
                     case 20:
                         this.modelo.ContarParImpar();
                         break;
-                    default:
-                        Console.WriteLine("Opção escolhida não é válida!");
-                        break;
                     case 21:
                         Console.WriteLine("Digite o primeiro horário: ");
-                        int hora1 = Convert.ToInt32(Console.ReadLine());
+                        double hora1 = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Digite o segundo horário: ");
-                        int hora2 = Convert.ToInt32(Console.ReadLine());
-                        this.modelo.Exercicio09(hora1, hora2);
+                        double hora2 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.modelo.Exercicio09(hora1, hora2));
+                        break;
+                    case 22:
+                        Console.WriteLine("Digite o primeiro número: ");
+                        int numero1 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Digite o segundo número: ");
+                        int numero2 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.modelo.Exercicio10(numero1, numero2));
+                        break;
+                    case 23:
+                        Console.WriteLine("Digite o primeiro número: ");
+                        int conta1 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Digite o segundo número: ");
+                        int conta2 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Digite o terceiro número: ");
+                        int conta3 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Digite o quarto número: ");
+                        int conta4 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.modelo.Exercicio11(conta1, conta2, conta3, conta4));
+                        break;
+                    default:
+                        Console.WriteLine("Opção escolhida não é válida!");
                         break;
                 }//fim do Escolha
             } while (GetOpcao() != 0);//fim do do..while
