@@ -18,6 +18,7 @@ namespace Exercicios
         private double num3;
         private double num4;
         private int resultado;
+        public int[] vet;//criando um vetor
 
         //Método Construtor: Instância as variáveis na memória
 
@@ -410,7 +411,45 @@ namespace Exercicios
             return "A média é: " + media;
         }//fim do Exercicio 11
 
-        public string Exercicio12;
+        //vetores
+        //Preencher o vetor
+        public void preencherVetor()
+        {
+            this.vet = new int[10];//Instanciando
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(i + 1 + "ª Posição: ");
+                this.vet[i] = Convert.ToInt32(Console.ReadLine());
+            }//fim do for
+        }//fim do preencherVetor
+
+        public void mostrarVetor()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(i + 1 + "ª Posição: " + this.vet[i]);
+            }//fim do for
+        }
+
+        public string ProcurarNumero(int num)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                if (vet[i] == num)
+                {
+                    return "O número está na posição: " + (i + 1);
+                }//fim do if
+            }//fim do for 
+            return "O " + num + " não foi encontrado no vetor";
+        }
+
+        public void Exercicio26()
+        {
+            for (int i = 9; i >= 0; i--)
+            {
+                Console.WriteLine(i + 1 + "º posição: " + (i + 1));
+            }
+        }
+
     }//fim da classe
 }//fim do projeto
- 

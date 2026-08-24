@@ -55,7 +55,10 @@ namespace Exercicio
                 "20.Contar Pares e Ímpares\n" +
                 "21.Horários\n" +
                 "22.Comparar os números\n" +
-                "23.Calcule a média");
+                "23.Calcule a média\n" +
+                "24.Vetores\n" +
+                "25.Procurar número no vetor\n" +
+                "26.Inverso\n");
             SetOpcao(Convert.ToInt32(Console.ReadLine()));
             Console.Clear();//Limpa o console
         }
@@ -253,6 +256,22 @@ namespace Exercicio
                         Console.WriteLine("Digite o quarto número: ");
                         int conta4 = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine(this.modelo.Exercicio11(conta1, conta2, conta3, conta4));
+                        break;
+                    case 24:
+                        this.modelo.preencherVetor();
+                        this.modelo.mostrarVetor();
+                        break;
+                    case 25:
+                        this.modelo.preencherVetor();
+                        Console.WriteLine("Informe um número para procurar no vetor: ");
+                        num = Convert.ToInt32(Console.ReadLine());
+                        //Chamar método de procura
+                        Console.WriteLine(this.modelo.ProcurarNumero(num));
+                        break;
+                    case 26:
+                        this.modelo.preencherVetor();
+                        this.modelo.mostrarVetor();
+                        this.modelo.Exercicio26();
                         break;
                     default:
                         Console.WriteLine("Opção escolhida não é válida!");
