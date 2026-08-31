@@ -449,6 +449,47 @@ namespace Exercicios
             {
                 Console.WriteLine(i + 1 + "º posição: " + (i + 1));
             }
+        }//fim do Exercício26
+
+        public void Exercicio27()
+        {
+            int[] numeros = new int[10];
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Digite um número: ");
+                numeros[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("\nNúmeros pares: ");
+            for (int i = 0; i < 10; i++)
+            {
+                if (numeros[i] % 2 == 0)
+                {
+                    Console.WriteLine(numeros[i]);
+                }
+            }
+        }//fim do Exercício27
+
+        public void Exercicio28()
+        {
+            int[] numeros = new int[10];
+            int soma = 0;
+            int media = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Digite um número: ");
+                numeros[i] = Convert.ToInt32(Console.ReadLine());
+
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                soma = soma + numeros[i];
+            }
+
+            media = soma / 10;
+            Console.WriteLine("A média é: " + media);
         }
 
     }//fim da classe

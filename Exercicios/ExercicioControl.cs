@@ -58,7 +58,9 @@ namespace Exercicio
                 "23.Calcule a média\n" +
                 "24.Vetores\n" +
                 "25.Procurar número no vetor\n" +
-                "26.Inverso\n");
+                "26.Inverso\n" +
+                "27.Pares\n" +
+                "28.Média\n");
             SetOpcao(Convert.ToInt32(Console.ReadLine()));
             Console.Clear();//Limpa o console
         }
@@ -272,6 +274,12 @@ namespace Exercicio
                         this.modelo.preencherVetor();
                         this.modelo.mostrarVetor();
                         this.modelo.Exercicio26();
+                        break;
+                    case 27:
+                        this.modelo.Exercicio27();
+                        break;
+                    case 28:
+                        this.modelo.Exercicio28();
                         break;
                     default:
                         Console.WriteLine("Opção escolhida não é válida!");
