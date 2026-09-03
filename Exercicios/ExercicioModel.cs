@@ -4,6 +4,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -490,6 +491,182 @@ namespace Exercicios
 
             media = soma / 10;
             Console.WriteLine("A média é: " + media);
+        }//fim do Exercicio 28
+
+        public void Exercicio29()
+        {
+
+            string[] nomes = new string[10];
+            int i = 0;
+            bool encontre = false;
+
+            for (i = 0; i < 10; i++)
+            {
+                nomes[i] = "";
+                Console.WriteLine(i + 1 + "ª Posição: ");
+                nomes[i] = Convert.ToString(Console.ReadLine());
+            }
+
+            Console.Write("\nNomes com a letra A: ");
+
+            foreach (string nome in nomes)
+            {
+                if (nome.StartsWith("A", StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine(nome);
+                    encontre = true;
+                }
+            }
+        }//fim do Exercicio 29
+
+        public void Exercicio30()
+        {
+
+            int[] numeros = new int[10];
+            int soma = 0;
+            int media = 0;
+            int contador = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(i + 1 + "ª Posição: ");
+                numeros[i] = Convert.ToInt32(Console.ReadLine());
+
+                soma = soma + numeros[i];
+                media = soma / 10;
+            }
+
+
+            for (int i = 0; i < 10; i++)
+            {
+                if (numeros[i] > media)
+                {
+                    contador = contador + 1;
+                }
+            }
+
+            Console.WriteLine("A média é de: " + media + " e a quantidade de números acima da média é de: " + contador);
+        }//fim do Exercício 30
+
+        public void Exercicio31()
+        {
+            int[] idades = new int[10];
+            int maiorIdade = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(i + 1 + "ª idade");
+                idades[i] = Convert.ToInt32(Console.ReadLine());
+
+            }
+
+            for (int i = 0; i < 9; i++)
+            {
+                if (idades[i] > idades[i + 1] && maiorIdade < idades[i])
+                {
+                    maiorIdade = idades[i];
+                }
+            }
+
+            Console.WriteLine("A maior idade digitada é: " + maiorIdade);
+        }
+
+        public void Exercicio32()
+        {
+
+            int[] alturas = new int[10];
+            int soma = 0;
+            int media = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(i + 1 + "ª Altura: ");
+                alturas[i] = Convert.ToInt32(Console.ReadLine());
+
+                soma = soma + alturas[i];
+                media = soma / 10;
+            }
+
+            Console.WriteLine("A média das alturas é de: " + media);
+        }
+
+        public void Exercicio33()
+        {
+
+            double[] salarios = new double[10];
+            int quantidade = 0;
+            double salarioBase = 1.200;
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Digite o salário " + i + 1 + "R$: ");
+                salarios[i] = Double.Parse(Console.ReadLine());
+
+                if (salarios[i] < 1200)
+                {
+                    quantidade++;
+                }
+            }
+            Console.WriteLine("\nQuantidade de pessoas que ganham abaixo de R$ 1.200: " + quantidade);
+        }//fim do Exercicio33
+
+        public void Exercicio34()
+        {
+
+            int[] numeros = new int[10];
+            int quantidade = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Digite o " + i + 1 + "ª número: ");
+                numeros[i] = int.Parse(Console.ReadLine());
+
+                if (numeros[i] % 5 == 0)
+                {
+                    quantidade++;
+                }
+            }
+
+            Console.WriteLine("A quantidade de múltiplos de 5: " + quantidade);
+        }//fim do Exercicio34
+
+        public void Exercicio35()
+        {
+
+            int[] pares = new int[10];
+            int[] impares = new int[10];
+            int posPar = 0;
+            int posImpar = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Digite o " + i + 1 + "º valor: ");
+                int valor = int.Parse(Console.ReadLine());
+
+                if (valor % 2 == 0)
+                {
+                    pares[posPar] = valor;
+                    posPar++;
+                }
+                else
+                {
+                    impares[posImpar] = valor;
+                    posImpar++;
+                }
+
+                Console.WriteLine("\nValore pares: ");
+                for (int i= 0; i < posPar; i++)
+                {
+                    Console.WriteLine(pares[i] + "");
+                }
+
+                Console.WriteLine("\nValores impares: ");
+                for (int i = 0; i < posImpar; i++)
+                {
+                    Console.WriteLine(impares[i] + "");
+                }
+            }
+
         }
 
     }//fim da classe

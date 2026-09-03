@@ -60,7 +60,14 @@ namespace Exercicio
                 "25.Procurar número no vetor\n" +
                 "26.Inverso\n" +
                 "27.Pares\n" +
-                "28.Média\n");
+                "28.Média\n" +
+                "29.Nomes com a letra A\n" +
+                "30.Números acima da média\n" +
+                "31.Leia 10 idades e exiba a maior\n" +
+                "32 Leia 10 alturas e exiba a média\n" +
+                "33. Salários abaixo de 1.200\n" +
+                "34. Múltiplos de 5\n" +
+                "35.Pares e Impares\n");
             SetOpcao(Convert.ToInt32(Console.ReadLine()));
             Console.Clear();//Limpa o console
         }
@@ -281,6 +288,26 @@ namespace Exercicio
                     case 28:
                         this.modelo.Exercicio28();
                         break;
+                    case 29:
+                        this.modelo.Exercicio29();
+                        break;
+                    case 30:
+                        this.modelo.Exercicio30();
+                        break;
+                    case 31:
+                        this.modelo.Exercicio31();
+                        break;
+                    case 32:
+                        this.modelo.Exercicio32();
+                        break;
+                    case 33:
+                        this.modelo.Exercicio33();
+                        break;
+                    case 34:
+                        this.modelo.Exercicio34();
+                        break;
+                    case 35:
+                        this.modelo.Exercicio35();\
                     default:
                         Console.WriteLine("Opção escolhida não é válida!");
                         break;
